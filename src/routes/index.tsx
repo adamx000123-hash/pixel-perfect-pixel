@@ -49,6 +49,7 @@ function Index() {
           <HowItWorks />
           <DailyTasks />
           <Points />
+          <WaitlistForm />
           <Faq />
           <Closing />
         </main>
