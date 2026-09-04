@@ -41,7 +41,7 @@ export function Problem() {
         <SectionHeader title={t.problem.title} sub={t.problem.sub} />
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {t.problem.cards.map((card, i) => {
-            const Icon = icons[i];
+            const Icon = icons[i] ?? Search;
             return (
               <article key={card.t} className="glass rounded-2xl p-6">
                 <span className="flex size-11 items-center justify-center rounded-xl bg-secondary/70 text-primary">
@@ -67,7 +67,7 @@ export function Solution() {
         <SectionHeader title={t.solution.title} />
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           {t.solution.cards.map((card, i) => {
-            const Icon = icons[i];
+            const Icon = icons[i] ?? Trophy;
             return (
               <article
                 key={card.t}
@@ -98,7 +98,7 @@ export function HowItWorks() {
         <SectionHeader title={t.how.title} sub={t.how.sub} />
         <ol className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {t.how.steps.map((step, i) => {
-            const Icon = icons[i];
+            const Icon = icons[i] ?? Award;
             return (
               <li key={step.t} className="glass relative rounded-2xl p-6">
                 <span className="absolute end-5 top-5 text-4xl font-bold text-foreground/8">
@@ -154,7 +154,7 @@ export function DailyTasks() {
 
         <ul className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {t.tasks.items.map((item, i) => {
-            const Icon = icons[i % icons.length];
+            const Icon = icons[i % icons.length] ?? ListChecks;
             const isDone = done.includes(i);
             return (
               <li key={item} className="glass flex flex-col justify-between rounded-2xl p-5">
