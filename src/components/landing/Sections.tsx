@@ -14,7 +14,6 @@ import {
   Search,
   Trophy,
 } from "lucide-react";
-import logoAsset from "@/assets/legend-logo.png.asset.json";
 import {
   Accordion,
   AccordionContent,
@@ -169,7 +168,9 @@ export function DailyTasks() {
                   className="mt-4 w-full"
                   aria-pressed={isDone}
                   onClick={() =>
-                    setDone((prev) => (prev.includes(i) ? prev.filter((x) => x !== i) : [...prev, i]))
+                    setDone((prev) =>
+                      prev.includes(i) ? prev.filter((x) => x !== i) : [...prev, i],
+                    )
                   }
                 >
                   {isDone ? <CheckCircle2 /> : null}
@@ -257,10 +258,12 @@ export function Footer() {
           <div className="max-w-sm">
             <div className="flex items-center gap-2.5">
               <img
-                src={logoAsset.url}
+                src="/favicon.png"
                 alt={t.brand}
                 className="size-9 object-contain"
-                style={{ filter: "invert(1) sepia(1) saturate(3) hue-rotate(5deg) brightness(0.9)" }}
+                style={{
+                  filter: "invert(1) sepia(1) saturate(3) hue-rotate(5deg) brightness(0.9)",
+                }}
               />
               <p className="text-base font-semibold">{t.brand}</p>
             </div>

@@ -3,7 +3,6 @@ import { Languages, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
-import logoAsset from "@/assets/legend-logo.png.asset.json";
 
 const links = [
   { id: "idea", key: "idea" },
@@ -35,7 +34,7 @@ export function Navbar() {
       >
         <a href="#top" className="flex items-center gap-2.5">
           <img
-            src={logoAsset.url}
+            src="/favicon.png"
             alt={t.brand}
             className="size-10 object-contain"
             style={{ filter: "invert(1) sepia(1) saturate(3) hue-rotate(5deg) brightness(0.9)" }}

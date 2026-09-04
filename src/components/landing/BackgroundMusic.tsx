@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 
-import musicAsset from "@/assets/legend-bg-music.mp3.asset.json";
 import { useI18n } from "@/lib/i18n";
 
 /**
@@ -17,7 +16,7 @@ export function BackgroundMusic() {
   const { lang } = useI18n();
 
   useEffect(() => {
-    const audio = new Audio(musicAsset.url);
+    const audio = new Audio("/audio/legend-bg-music.mp3");
     audio.loop = true;
     audio.volume = 0.35;
     audio.preload = "auto";
@@ -56,9 +55,7 @@ export function BackgroundMusic() {
 
     // Attempt immediate autoplay, then arm interaction listeners.
     tryPlay();
-    events.forEach((e) =>
-      window.addEventListener(e, onFirstInteraction, { passive: true }),
-    );
+    events.forEach((e) => window.addEventListener(e, onFirstInteraction, { passive: true }));
 
     return () => {
       removeListeners();
@@ -89,11 +86,7 @@ export function BackgroundMusic() {
       }
       className="fixed bottom-5 left-5 z-50 flex h-11 w-11 items-center justify-center rounded-full border border-primary/30 bg-card/70 text-primary shadow-lg backdrop-blur-md transition-colors hover:bg-card"
     >
-      {muted || !started ? (
-        <VolumeX className="h-5 w-5" />
-      ) : (
-        <Volume2 className="h-5 w-5" />
-      )}
+      {muted || !started ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
     </button>
   );
 }
