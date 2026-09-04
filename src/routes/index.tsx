@@ -13,6 +13,7 @@ import {
   Closing,
   Footer,
 } from "@/components/landing/Sections";
+import { WaitlistForm } from "@/components/landing/WaitlistForm";
 
 export const Route = createFileRoute("/")({
   head: () => ({
