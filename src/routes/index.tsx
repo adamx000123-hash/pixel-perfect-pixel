@@ -14,6 +14,7 @@ import {
   Footer,
 } from "@/components/landing/Sections";
 import { WaitlistForm } from "@/components/landing/WaitlistForm";
+import { BackgroundMusic } from "@/components/landing/BackgroundMusic";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -54,6 +55,7 @@ function Index() {
           <Closing />
         </main>
         <Footer />
+        <BackgroundMusic />
       </div>
     </LanguageProvider>
   );
