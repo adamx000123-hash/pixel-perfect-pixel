@@ -254,7 +254,15 @@ export function Footer() {
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
           <div className="max-w-sm">
-            <p className="text-base font-semibold">{t.brand}</p>
+            <div className="flex items-center gap-2.5">
+              <img
+                src={logoAsset.url}
+                alt={t.brand}
+                className="size-9 object-contain"
+                style={{ filter: "invert(1) sepia(1) saturate(3) hue-rotate(5deg) brightness(0.9)" }}
+              />
+              <p className="text-base font-semibold">{t.brand}</p>
+            </div>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t.footer.desc}</p>
           </div>
           <nav className="flex gap-5 text-sm text-muted-foreground">
