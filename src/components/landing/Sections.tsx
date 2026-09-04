@@ -14,6 +14,7 @@ import {
   Search,
   Trophy,
 } from "lucide-react";
+import logoAsset from "@/assets/legend-logo.png.asset.json";
 import {
   Accordion,
   AccordionContent,
