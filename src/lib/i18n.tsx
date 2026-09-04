@@ -1,4 +1,5 @@
-import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { useContext, useEffect, useState, type ReactNode } from "react";
+import { LangContext } from "./i18n-context";
 
 export type Lang = "ar" | "en";
 
@@ -279,7 +280,6 @@ export const dict = {
 
 type Ctx = { lang: Lang; setLang: (l: Lang) => void; t: (typeof dict)["ar"]; dir: "rtl" | "ltr" };
 
-const LangContext = createContext<Ctx | null>(null);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>("ar");
