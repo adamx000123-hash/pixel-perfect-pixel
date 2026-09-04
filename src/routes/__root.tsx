@@ -77,21 +77,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "LEGEND — ليجند | منصة انضباط التداول" },
+      {
+        name: "description",
+        content: "LEGEND منصة لتدوين الصفقات وبناء انضباط التداول اليومي — مهام، نقاط، ومراجعة منظمة.",
+      },
+      { property: "og:title", content: "LEGEND — ليجند | منصة انضباط التداول" },
+      {
+        property: "og:description",
+        content: "LEGEND منصة لتدوين الصفقات وبناء انضباط التداول اليومي.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       {
         rel: "preconnect",

@@ -18,7 +18,7 @@ import { WaitlistForm } from "@/components/landing/WaitlistForm";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "قائمة الانتظار | منصة انضباط التداول" },
+      { title: "LEGEND — ليجند | قائمة الانتظار" },
       {
         name: "description",
         content:

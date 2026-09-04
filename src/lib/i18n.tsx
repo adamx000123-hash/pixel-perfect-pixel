@@ -5,7 +5,7 @@ export type Lang = "ar" | "en";
 export const dict = {
   ar: {
     dir: "rtl",
-    brand: "تِرِيدر لوغ",
+    brand: "ليجند",
     nav: {
       idea: "الفكرة",
       features: "المزايا",
@@ -141,7 +141,7 @@ export const dict = {
   },
   en: {
     dir: "ltr",
-    brand: "TraderLog",
+    brand: "LEGEND",
     nav: {
       idea: "The idea",
       features: "Features",

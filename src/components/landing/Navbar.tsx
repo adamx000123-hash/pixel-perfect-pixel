@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { Languages, LineChart, Menu, X } from "lucide-react";
+import { Languages, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
+import logoAsset from "@/assets/legend-logo.png.asset.json";
 
 const links = [
   { id: "idea", key: "idea" },
@@ -32,10 +33,13 @@ export function Navbar() {
           scrolled ? "glass" : "border border-transparent",
         )}
       >
-        <a href="#top" className="flex items-center gap-2">
-          <span className="flex size-9 items-center justify-center rounded-xl bg-[image:var(--gradient-gold)] text-primary-foreground">
-            <LineChart className="size-4" />
-          </span>
+        <a href="#top" className="flex items-center gap-2.5">
+          <img
+            src={logoAsset.url}
+            alt={t.brand}
+            className="size-10 object-contain"
+            style={{ filter: "invert(1) sepia(1) saturate(3) hue-rotate(5deg) brightness(0.9)" }}
+          />
           <span className="text-base font-semibold tracking-tight">{t.brand}</span>
         </a>
 
