@@ -1,9 +1,9 @@
 /**
- * Waitlist submission logic, kept separate from the UI so it can be pointed at a
- * real API / database / SMS service later without touching components.
- *
- * Current implementation: local (demo) only. No backend is connected yet.
+ * Waitlist submission logic, kept separate from the UI.
+ * Entries are stored in the Lovable Cloud database (table: waitlist_signups).
  */
+
+import { supabase } from "@/integrations/supabase/client";
 
 export type WaitlistEntry = {
   firstName: string;
@@ -49,17 +49,15 @@ export function isValidName(raw: string): boolean {
 
 export async function submitWaitlist(entry: WaitlistEntry): Promise<WaitlistResult> {
   try {
-    // Integration point: replace with a real API call (server function, CRM, SMS/WhatsApp).
-    await new Promise((resolve) => setTimeout(resolve, 900));
-    const payload = {
-      ...entry,
-      phone: `${entry.countryCode}${normalizePhone(entry.phone)}`,
-      createdAt: new Date().toISOString(),
-    };
-    if (typeof window !== "undefined") {
-      const existing = JSON.parse(localStorage.getItem("waitlist_demo") ?? "[]");
-      localStorage.setItem("waitlist_demo", JSON.stringify([...existing, payload]));
-    }
+    const phone = normalizePhone(entry.phone);
+    const { error } = await supabase.from("waitlist_signups").insert({
+      first_name: entry.firstName.trim(),
+      last_name: entry.lastName.trim(),
+      country_code: entry.countryCode,
+      phone,
+      full_phone: `${entry.countryCode}${phone}`,
+    });
+    if (error) return { ok: false, error: "generic" };
     return { ok: true };
   } catch {
     return { ok: false, error: "generic" };
